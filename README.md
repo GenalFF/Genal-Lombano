@@ -32,6 +32,8 @@ Sistema RAG (Retrieval-Augmented Generation) de alta seguridad. Lee vademécums 
 - **Lenguajes:** Python, SQL, JavaScript (en aprendizaje).
 - **IA & Data Science:** PyTorch, Scikit-Learn, Redes Neuronales, NLP, LangChain, FAISS, Embeddings.
 - **Desarrollo Web/Mobile:** Streamlit, Google Colab, GitHub Actions.
+- 
+- Computer Vision (CNN): Validación de la arquitectura Genal Activation en Redes Neuronales Convolucionales (PyTorch) para clasificación de imágenes, demostrando convergencia rápida y ajuste dinámico de parámetros (learnable parameters).
 
 ## 📫 Contacto
 - **Email:** genallombano@gmail.com
