@@ -35,5 +35,5 @@ Sistema RAG (Retrieval-Augmented Generation) de alta seguridad. Lee vademécums 
 
 ## 📫 Contacto
 - **Email:** genallombano@gmail.com
-- **LinkedIn:** (https://www.linkedin.com/in/genal-lombano-271498409?utm_source=share_via&utm_content=profile&utm_medium=member_android) *(https://sofi-pro-ventas-z.streamlit.app/)*
+- **LinkedIn:** (https://www.linkedin.com/in/genal-lombano-271498409?utm_source=share_via&utm_content=profile&utm_medium=member_android) Sofi pro *(https://sofi-pro-ventas-z.streamlit.app/)*
 - **Ubicación:** Píritu, Portuguesa, Venezuela.
