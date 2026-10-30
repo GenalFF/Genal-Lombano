@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genal Activation Family</title>
+    <title>Genal Activation Family | AI Research</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,11 +15,13 @@
         }
         header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
             background: linear-gradient(135deg, #1f6feb, #238636);
             color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
-        h1 { margin: 0; font-size: 2.5em; }
+        h1 { margin: 0; font-size: 2.8em; letter-spacing: 1px; }
+        h2 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px; margin-top: 0;}
         .container {
             max-width: 900px;
             margin: 40px auto;
@@ -29,21 +31,29 @@
             background-color: #161b22;
             border: 1px solid #30363d;
             border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
         }
         .highlight { color: #58a6ff; font-weight: bold; }
+        .function-box {
+            background-color: #0d1117;
+            border-left: 4px solid #3fb950;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
+            text-align: center;
         }
         th, td {
-            padding: 10px;
-            text-align: left;
+            padding: 12px;
             border-bottom: 1px solid #30363d;
         }
-        th { color: #8b949e; }
+        th { color: #8b949e; background-color: #0d1117; }
+        .winner { color: #3fb950; font-weight: bold; font-size: 1.1em; }
         .code {
             background-color: #0d1117;
             padding: 15px;
@@ -51,62 +61,152 @@
             font-family: monospace;
             border: 1px solid #30363d;
             overflow-x: auto;
+            color: #a5d6ff;
         }
         .btn {
             display: inline-block;
             background-color: #238636;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 24px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 15px;
+            transition: 0.3s;
         }
+        .btn:hover { background-color: #2ea043; }
+        .btn-blue { background-color: #1f6feb; }
+        .btn-blue:hover { background-color: #388bfd; }
+        .img-placeholder {
+            background-color: #21262d;
+            border: 2px dashed #30363d;
+            border-radius: 8px;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 20px;
+            color: #8b949e;
+        }
+        .img-placeholder img { max-width: 100%; border-radius: 4px; }
+        footer { text-align: center; padding: 30px; color: #8b949e; font-size: 0.9em; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>🧠 Genal Activation Family</h1>
-        <p>Redefiniendo el Deep Learning con funciones de activación dinámicas.</p>
+        <p>Redefiniendo el Deep Learning con funciones de activación dinámicas y entrenables.</p>
     </header>
 
     <div class="container">
+        
+        <!-- INTRODUCCIÓN -->
         <div class="card">
             <h2>¿Qué es esta tecnología?</h2>
-            <p>La <span class="highlight">Genal Activation Family</span> es una suite de funciones de activación entrenables creadas por <strong>Genal Ediso Lombano Pineda</strong>. A diferencia de ReLU o GELU que son estáticas, nuestras funciones ajustan sus parámetros (k y beta) en tiempo real durante el entrenamiento, evitando el colapso del gradiente.</p>
+            <p>La <span class="highlight">Genal Activation Family</span> es una suite de funciones de activación creadas por <strong>Genal Ediso Lombano Pineda</strong>. A diferencia de las funciones estáticas tradicionales (como ReLU o GELU), esta familia introduce parámetros dinámicos (<code>k</code> y <code>beta</code>) que se entrenan mediante retropropagación (backpropagation).</p>
+            <p>Esto permite que la red neuronal adapte su curva de activación en tiempo real según los datos que está procesando, evitando el colapso del gradiente y encontrando mínimos más profundos.</p>
             <a href="https://pypi.org/project/genal-activation/" class="btn">Instalar vía PyPI</a>
+            <a href="https://doi.org/10.5281/zenodo.20304195" class="btn btn-blue">Leer Paper en Zenodo</a>
         </div>
 
+        <!-- LAS FUNCIONES -->
         <div class="card">
-            <h2>🏆 Resultados Benchmark (Flowers-102)</h2>
-            <p>Prueba realizada con una Red Neuronal Convolucional (CNN) de 15 épocas. Comparativa de precisión final:</p>
-            <table>
-                <tr><th>Función</th><th>Precisión</th><th>Estado</th></tr>
-                <tr><td><strong>GenalShift (Nuestra)</strong></td><td style="color:#3fb950; font-weight:bold;">27.45%</td><td>🥇 Ganador</td></tr>
-                <tr><td>GELU (OpenAI)</td><td>24.02%</td><td>🥈</td></tr>
-                <tr><td>Swish (Google)</td><td>23.04%</td><td>🥉</td></tr>
-                <tr><td>ReLU (Tradicional)</td><td>15.69%</td><td>❌</td></tr>
-            </table>
-        </div>
-
-        <div class="card">
-            <h2>💻 Uso Rápido (PyTorch)</h2>
-            <div class="code">
-                import torch.nn as nn<br>
-                from genal_activation import GenalShift<br><br>
-                # Usar en una red neuronal<br>
-                self.capa = nn.Linear(64, 128)<br>
-                self.activacion = GenalShift() <br>
-                # ¡Listo! El modelo aprenderá el mejor parámetro k y beta.
+            <h2>La Familia de Funciones</h2>
+            
+            <div class="function-box">
+                <h3>1. GenalShift</h3>
+                <p>Introduce un desplazamiento horizontal entrenable (<code>beta</code>) junto con el parámetro de curvatura (<code>k</code>). Es la función estrella del benchmark.</p>
+            </div>
+            
+            <div class="function-box">
+                <h3>2. GenalAdvanced</h3>
+                <p>Optimiza un parámetro <code>k</code> independiente para cada canal (feature map). Ideal para capas convolucionales (CNN) donde cada filtro busca un patrón distinto.</p>
+            </div>
+            
+            <div class="function-box">
+                <h3>3. GenalActivation</h3>
+                <p>Utiliza un escalar global para suavizar la curva. Ideal para capas densas (Fully Connected) en procesamiento de lenguaje o tablas.</p>
+            </div>
+            
+            <div class="function-box">
+                <h3>4. GenalLeaky</h3>
+                <p>Garantiza un flujo de gradiente mínimo (alpha) para valores negativos, evitando que las neuronas "mueran" durante entrenamientos largos.</p>
             </div>
         </div>
-        
+
+        <!-- RESULTADOS DEL BENCHMARK -->
         <div class="card">
-            <h2>📚 Documentación Científica</h2>
-            <p>El paper oficial está publicado en Zenodo con DOI: <a href="https://doi.org/10.5281/zenodo.20304195" style="color:#58a6ff;">10.5281/zenodo.20304195</a></p>
+            <h2>🏆 Resultados del Benchmark (Flowers-102)</h2>
+            <p>Prueba controlada: Red Neuronal Convolucional (CNN) de 3 capas, 15 épocas, mismo dataset y optimizador. Solo se varió la función de activación.</p>
+            
+            <table>
+                <tr>
+                    <th>Función de Activación</th>
+                    <th>Creador / Origen</th>
+                    <th>Precisión (Accuracy)</th>
+                </tr>
+                <tr>
+                    <td><strong>GenalShift</strong></td>
+                    <td>Genal Activation (Independiente)</td>
+                    <td class="winner">27.45% 🥇</td>
+                </tr>
+                <tr>
+                    <td>GELU</td>
+                    <td>OpenAI / Google (BERT)</td>
+                    <td>24.02% 🥈</td>
+                </tr>
+                <tr>
+                    <td>Swish</td>
+                    <td>Google Brain</td>
+                    <td>23.04% 🥉</td>
+                </tr>
+                <tr>
+                    <td>ReLU</td>
+                    <td>Estándar de la Industria</td>
+                    <td>15.69%</td>
+                </tr>
+            </table>
+            <p style="font-size: 0.9em; color: #8b949e; margin-top: 15px;">*Nota: La precisión base (adivinar al azar entre 102 clases) es de 0.98%. Nuestro modelo es 28 veces más preciso.</p>
         </div>
+
+        <!-- GRÁFICAS Y VISUALIZACIONES -->
+        <div class="card">
+            <h2>📊 Evidencia Visual</h2>
+            <p>A continuación se muestran las curvas de aprendizaje y el comportamiento matemático de la familia.</p>
+            
+            <!-- AQUÍ PUEDES PONER LAS IMÁGENES LUEGO -->
+            <div class="img-placeholder">
+                <p>📉 <strong>Gráfica 1: Curva de Aprendizaje (Loss)</strong></p>
+                <p>ReLU se estanca en ~2.67, mientras GenalShift desciende hasta ~1.67.</p>
+                <!-- Para poner la imagen real, borra este comentario y pon: -->
+                <!-- <img src="ruta_de_tu_imagen.png" alt="Curva de aprendizaje"> -->
+            </div>
+
+            <div class="img-placeholder" style="margin-top: 15px;">
+                <p>📈 <strong>Gráfica 2: Funciones de Activación</strong></p>
+                <p>Comparativa de la forma de la curva (Softplus + Clamp).</p>
+                <!-- <img src="ruta_de_tu_imagen2.png" alt="Funciones"> -->
+            </div>
+        </div>
+
+        <!-- USO RÁPIDO -->
+        <div class="card">
+            <h2>💻 Uso Rápido en PyTorch</h2>
+            <div class="code">
+import torch.nn as nn<br>
+from genal_activation import GenalShift<br><br>
+# Uso en una red convolucional<br>
+self.conv1 = nn.Conv2d(3, 16, 3)<br>
+self.act1 = GenalShift() <br><br>
+# La red ajustará k y beta automáticamente
+            </div>
+        </div>
+
     </div>
+
+    <footer>
+        <p>Desarrollado con pasión desde Venezuela para el mundo. 🇻🇪🌎</p>
+        <p>© 2026 Genal Ediso Lombano Pineda. Open Source bajo licencia MIT.</p>
+    </footer>
 
 </body>
 </html>
